@@ -1,0 +1,60 @@
+extends ../main.layout.pug
+
+block content
+    section.section.hero
+        ul.socials
+            each item in ["vk", "gh", "in"]
+                li.socials__item
+                    a(href="#" class=`socials_link socials__link_${item}`)
+        a(href="").hamburger
+
+        a(href="#").down-arrow
+            img(src="img/icons/arrow-down.svg" alt="").down-arrow__icon
+
+        .hero__title
+            svg.section-title
+                use(xlink:href="/img/decor/sprite.svg#portfolio")
+            .user.hero__user-block
+                .user__photo
+                    .user__photo-avatar
+                        img(src="/img/content/user.jpg" alt="").user__photo-img
+                .user__name Будимир Вяземский
+                .user__desc Личный сайт веб-разработчика
+
+    section.section.about
+        .about__left
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_white.about__triangle
+                polygon(points="0,0 0,100 1000, 100")
+
+            +title("Обо мне", "about", "about__section-title")
+
+            .user-about
+                .user-about__picture
+                .user-about__title.subtitle Кто я
+                .user-about__text
+                    p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .about__right
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_beige.about__triangle
+                polygon(points="0,100 1000, 100 1000 0")
+
+            .about-data
+                .about-data__description.about-user-info
+                    .about-user-info__title.subtitle Чем я могу быть вам полезен
+                    .about-user-info__text
+                .about-data__content
+                    ul.skills
+                        each skillObj in skills
+                            each skillsCat, category in skillObj
+                                li.skills__item
+                                    .skill-section= category
+                                    ul.skill-section__list
+                                        each skillName in skillsCat
+                                            li.skills-section__item
+                                                .skill
+                                                    svg.skill__cicle
+                                                    .skill__name= skillName
+
+    section.section.map
+
+

@@ -1,0 +1,24 @@
+.about
+{
+  display: flex;
+
+  &__left
+  {
+    width: 50%;
+    background-color: $themeColorWrite;
+    position: relative;
+  }
+
+  &__right
+  {
+    width: 50%;
+    background-color: $themeColorBeige;
+    position: relative;
+  }
+
+  &__triangle
+  {
+    position: absolute;
+    bottom: 100%;
+  }
+}

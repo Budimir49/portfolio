@@ -1,0 +1,23 @@
+.user
+{
+  color: #fff;
+
+  &__photo-img
+  {
+    border-radius: 50%;
+  }
+
+  &__name
+  {
+    @include roboto(medium);
+    font-size: rem(35px);
+    margin-top: rem(35px);
+  }
+
+  &__desc
+  {
+    @include roboto();
+    font-size: rem(16px);
+    margin-top: rem(8px);
+  }
+}

@@ -1,0 +1,18 @@
+.triangle
+{
+  height: rem(160px);
+  width: 100%;
+
+  &_fill
+  {
+    &_white
+    {
+      fill: $themeColorWrite;
+    }
+
+    &_beige
+    {
+      fill: $themeColorBeige;
+    }
+  }
+}

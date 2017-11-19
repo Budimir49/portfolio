@@ -1,0 +1,61 @@
+@mixin circle($width, $color)
+{
+  width: $width;
+  height: $width;
+  border-radius: $width/2;
+  background-color: $color;
+}
+
+@function rem($px)
+{
+  @return $px / 16px + 0rem;
+}
+
+@mixin centered($axis: 'both')
+{
+  position: absolute;
+  @if $axis == 'both'
+  {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x'
+  {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y'
+  {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+@mixin roboto($style: regular) {
+  font-family: 'Roboto', sans-serif;
+
+  @if $style == bold {
+    font-weight: 900;
+  }
+
+  @if $style == medium {
+    font-weight: 700;
+  }
+
+  @if $style == regular {
+    font-weight: 500;
+  }
+
+  @if $style == light {
+    font-weight: 300;
+  }
+}
+
+@mixin lifehack()
+{
+  font-family: 'Sansus Webissimo', sans-serif;
+}

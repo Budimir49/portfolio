@@ -1,0 +1,12 @@
+.down-arrow
+{
+  @include centered(x);
+  bottom: rem(90px);
+  z-index: 5;
+
+  &__icon
+  {
+    width: rem(26px);
+    height: rem(16px);
+  }
+}

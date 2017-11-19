@@ -1,0 +1,33 @@
+.title
+{
+  color: $themeColorTitle;
+  font-size: rem(63px);
+  padding: rem(45px) rem(80px);
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  @include lifehack();
+  text-transform: uppercase;
+
+  &:after
+  {
+    content: '';
+    display: block;
+    position: absolute;
+    @include centered(x);
+    background: $themeColorTitle;
+    width: rem(90px);
+    height: rem(3px);
+  }
+
+
+  &__picture
+  {
+    @include centered();
+    z-index: 1;
+    fill: $themeColorTitleBackground;
+    opacity: 0.1;
+  }
+
+
+}
