@@ -10,8 +10,26 @@
   &__name
   {
     @include roboto(medium);
-    font-size: rem(35px);
-    margin-top: rem(35px);
+
+    &_mt-large
+    {
+      margin-top: rem(35px);
+    }
+
+    &_mt-small
+    {
+      margin-top: rem(20px);
+    }
+
+    &_fz-large
+    {
+      font-size: rem(35px);
+    }
+
+    &_fz-small
+    {
+      font-size: rem(28px);
+    }
   }
 
   &__desc

@@ -1,0 +1,19 @@
+.skill-section
+{
+
+  @include roboto(medium);
+  font-size: rem(28px);
+
+  &__list
+  {
+    display: flex;
+    margin-top: rem(20px);
+    margin-bottom:  rem(40px);
+  }
+
+  &__item
+  {
+    margin-right: rem(40px);
+  }
+
+}

@@ -1,0 +1,38 @@
+.btns
+{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: table;
+  justify-content: space-around;
+
+  &__item
+  {
+    display: table-cell;
+    height: auto;
+    background-color: #618f55;
+    border-right: 1px solid #a0ba9e;
+
+    &:last-child
+    {
+      border-right: 0;
+    }
+  }
+
+  &__link
+  {
+    padding: rem(15px);
+    display: block;
+    width: 100%;
+    height: 100%;
+    @include roboto(medium);
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+
+    &:hover
+    {
+      background-color: #498039;
+    }
+  }
+}

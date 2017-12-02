@@ -1,0 +1,118 @@
+extends ../main.layout.pug
+
+block content
+    section.section.hero
+        .hero__gradient
+            header.hero__header
+                ul.socials.hero__socials
+                    each item in ["vk", "gh", "in"]
+                        li.socials__item
+                            a(href="#" class=`socials__link socials__link_${item}`)
+                                svg(width="30" height="22").socials__icon.socials__icon_white.socials__icon_hover_green
+                                    use(xlink:href=`/img/social/sprite.svg#${item}`)
+                a(href="").hamburger.hero__hamburger
+                    svg(width="40" height="30").hamburger__icon
+                        use(xlink:href="/img/icons/sprite.svg#hamburger")
+
+            a(href="#").down-arrow
+                img(src="img/icons/arrow-down.svg" alt="").down-arrow__icon
+
+            .hero__title
+                svg.section-title
+                    use(xlink:href="/img/decor/sprite.svg#portfolio")
+                .user.hero__user-block
+                    .user__photo
+                        .user__photo-avatar
+                            img(src="/img/content/user.jpg" alt="").user__photo-img
+                    .user__name.user__name_mt-large.user__name_fz-large Будимир Вяземский
+                    .user__desc Личный сайт веб-разработчика
+
+    section.section.about
+        .about__left
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_white.about__triangle
+                polygon(points="0,0 0,100 1000, 100")
+
+            +title("Обо мне", "about", "about__section-title")
+
+            .user-about
+                .user-about__picture
+                    img(src="img/content/user_big.jpg" alt="")
+                .user-about__title.subtitle Кто я
+                .user-about__text
+                    p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .about__right
+            svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_beige.about__triangle
+                polygon(points="0,100 1000, 100 1000 0")
+
+            .about-data
+                .about-data__description.about-user-info
+                    .about-user-info__title.subtitle Чем я могу быть вам полезен
+                    .about-user-info__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+                .about-data__content
+                    ul.skills
+                        each skillObj in skills
+                            each skillsCat, category in skillObj
+                                li.skills__item
+                                    .skill-section= category
+                                        ul.skill-section__list
+                                            each skillName in skillsCat
+                                                li.skill-section__item
+                                                    .skill
+                                                        svg(viewBox="0 0 110 110").skill__circle
+                                                            circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                            circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").skill__circle-second.skill__circle-second_circle-60
+                                                        .skill__name= skillName
+
+    section.section.map
+        .map__content
+            .contacts
+                .subtitle.contacts__title Контакты
+                ul.contacts__list
+                    li.contacts__item
+                        a(href="#").contacts__link
+                            svg(width="24" height="24").contacts__icon
+                                use(xlink:href="/img/icons/sprite.svg#skype")
+                            .contacts__text skype_kdn
+                    li.contacts__item
+                        a(href="#").contacts__link
+                            svg(width="24" height="16").contacts__icon
+                                use(xlink:href="/img/icons/sprite.svg#email")
+                            .contacts__text petich@gmail.com
+                    li.contacts__item
+                        a(href="#").contacts__link
+                            svg(width="17" height="23").contacts__icon
+                                use(xlink:href="/img/icons/sprite.svg#phone")
+                            .contacts__text +7906 488 89 87
+                    li.contacts__item
+                        a(href="#").contacts__link
+                            svg(width="16" height="21").contacts__icon
+                                use(xlink:href="/img/icons/sprite.svg#address")
+                            .contacts__text Новосибирск, ул. Инская д.14
+        footer.footer
+            .footer__top
+                .footer__left
+                    p.footer__left-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+                .footer__middle
+                    ul.footer__menu
+                        li.footer__menu-item
+                            a(href="#").footer__menu-link Мои работы
+                        li.footer__menu-item
+                            a(href="#").footer__menu-link Обо мне
+                        li.footer__menu-item
+                            a(href="#").footer__menu-link Блог
+                        li.footer__menu-item
+                            a(href="#").footer__menu-link Авторизация
+                    ul.socials.footer__socials
+                        each item in ["vk", "gh", "in"]
+                            li.socials__item
+                                a(href="#" class=`socials__link socials__link_${item}`)
+                                    svg(width="30" height="22").socials__icon.socials__icon_grey.socials__icon_hover_white
+                                        use(xlink:href=`/img/social/sprite.svg#${item}`)
+                .footer__right
+                    p.footer__right-text-top Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+                    p.footer__right-text-down — Martin Golding
+            .footer__bottom © Будимир Вяземский | 2017
+
+
+

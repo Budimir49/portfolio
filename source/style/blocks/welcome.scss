@@ -1,0 +1,28 @@
+.welcome
+{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-image: url(/img/bg/index.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-right-radius: 3px;
+
+
+  &__text
+  {
+    @include centered(x);
+    bottom: 5%;
+    color: #fff;
+
+  }
+
+
+  &__btn-auth
+  {
+    position: absolute;
+    right: 5%;
+    top: 2%;
+  }
+}

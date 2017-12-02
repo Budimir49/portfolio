@@ -1,0 +1,23 @@
+.subtitle
+{
+
+  font-size: rem(35px);
+  position: relative;
+  display: inline-block;
+  @include sansus();
+  text-transform: uppercase;
+  padding-bottom: rem(30px);
+  text-align: center;
+
+  &:after
+  {
+    content: '';
+    display: block;
+    @include centered(x);
+    background: $themeColorText;
+    width: rem(90px);
+    height: rem(3px);
+    bottom: 0;
+  }
+
+}

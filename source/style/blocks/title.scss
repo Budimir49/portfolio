@@ -6,18 +6,19 @@
   position: relative;
   display: inline-block;
   z-index: 2;
-  @include lifehack();
+  @include sansus();
   text-transform: uppercase;
+  text-align: center;
 
   &:after
   {
     content: '';
     display: block;
-    position: absolute;
     @include centered(x);
     background: $themeColorTitle;
     width: rem(90px);
     height: rem(3px);
+    bottom: rem(15px);
   }
 
 

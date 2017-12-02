@@ -1,0 +1,116 @@
+.footer
+{
+  height: rem(185px);
+
+
+  &__top
+  {
+    background-color: #53595c;
+    opacity: 0.85;
+    height: rem(150px);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bottom
+  {
+    background-color: #7fa870;
+    opacity: 0.85;
+    height: rem(35px);
+    color: #fff;
+    text-align: center;
+    line-height: rem(35px);
+  }
+
+  &__left
+  {
+    width: 33%;
+    color: #fff;
+    @include roboto(light);
+
+    &-text
+    {
+      padding-top: rem(30px);
+      padding-left: rem(25px);
+      width: 70%;
+    }
+  }
+
+  &__right
+  {
+    width: 33%;
+    color: #fff;
+    font-style: italic;
+
+    &-text-top
+    {
+      padding-top: rem(30px);
+      padding-right: rem(25px);
+      padding-left: rem(25px);
+      @include roboto(light);
+      opacity: .5;
+    }
+
+    &-text-down
+    {
+      margin-top: rem(8px);
+      padding-left: rem(25px);
+      @include roboto(bolt);
+      opacity: .5;
+    }
+  }
+
+  &__middle
+  {
+    width: 33%;
+    position: relative;
+
+    &:before, &:after
+    {
+      content: '';
+      display: block;
+      @include centered(y);
+      background: #69716e;
+      width: 1px;
+      height: rem(90px);
+    }
+
+    &:before
+    {
+      left: rem(-2px);
+    }
+
+    &:after
+    {
+      right: rem(-2px);
+    }
+
+  }
+
+  &__menu
+  {
+    display: flex;
+    margin-top: rem(30px);
+    margin-left: rem(25px);
+
+    &-item
+    {
+      margin-right: rem(40px);
+    }
+
+    &-link
+    {
+      @include roboto(bold);
+      color: #fff;
+      text-decoration: none;
+
+    }
+  }
+
+  &__socials
+  {
+    margin-top: rem(30px);
+    margin-left: rem(25px);
+  }
+
+}

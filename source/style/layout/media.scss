@@ -1,0 +1,25 @@
+@mixin laptops
+{
+  @media screen and (max-width: $laptop)
+  {
+    @content
+  }
+}
+
+
+@mixin ipads
+{
+  @media screen and (max-width: $ipad)
+  {
+    @content
+  }
+}
+
+
+@mixin iphones
+{
+  @media screen and (max-width: $iphone)
+  {
+    @content
+  }
+}

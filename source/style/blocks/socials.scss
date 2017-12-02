@@ -1,0 +1,54 @@
+.socials
+{
+
+  display: flex;
+
+  &__item
+  {
+    margin-right: 30px;
+
+    &:last-child
+    {
+      margin-right: 0;
+    }
+  }
+
+  &__link
+  {
+    display: block;
+  }
+
+
+  &__icon
+  {
+
+
+    &_white
+    {
+      fill: #fff;
+    }
+
+    &_grey
+    {
+      fill: #a9acad;
+    }
+
+    &_hover_green
+    {
+      &:hover
+      {
+        fill: #6c9c5a;
+      }
+    }
+
+    &_hover_white
+    {
+      &:hover
+      {
+        fill: #fff;
+      }
+    }
+  }
+
+
+}

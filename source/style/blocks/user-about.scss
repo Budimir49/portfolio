@@ -1,0 +1,26 @@
+.user-about
+{
+  width: rem(440px);
+  margin: rem(20px) rem(20px);
+  display: flex;
+  flex-direction: column;
+
+  &__picture
+  {
+    margin-bottom: rem(40px);
+  }
+
+  &__title
+  {
+    width: rem(120px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__text
+  {
+    margin-top: rem(20px);
+    line-height: 1.5;
+  }
+
+}

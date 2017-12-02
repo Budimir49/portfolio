@@ -1,0 +1,22 @@
+.map
+{
+  height: rem(1100px);
+  background-image: url(/img/bg/map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+
+  &__content
+  {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+}

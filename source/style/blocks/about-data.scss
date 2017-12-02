@@ -1,0 +1,21 @@
+.about-data
+{
+
+  &__description
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-info__title
+  {
+    width: rem(280px);
+  }
+
+
+  &__content
+  {
+    margin: 0 rem(40px);
+  }
+
+}
