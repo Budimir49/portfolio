@@ -59,3 +59,30 @@
 {
   font-family: 'Sansus Webissimo', sans-serif;
 }
+
+@mixin placecolor($color: #000000) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin placeSlideOnFocus()
+{
+  &::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+  &::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+  &:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+  &:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+  &:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+}

@@ -9,6 +9,11 @@
 
   //
 
+  &__btn-arrow
+  {
+    @include centered(x);
+    bottom: rem(90px);
+  }
 
   &__gradient
   {

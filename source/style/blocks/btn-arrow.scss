@@ -1,0 +1,33 @@
+.btn-arrow
+{
+
+  z-index: 10;
+
+  &__icon
+  {
+
+    fill: #fff;
+
+    &_small
+    {
+      width: rem(26px);
+      height: rem(16px);
+    }
+
+    &_big
+    {
+      width: rem(45px);
+      height: rem(30px);
+    }
+
+    &_opacity
+    {
+      opacity: .7;
+    }
+
+    &_up
+    {
+      transform: rotate(180deg)
+    }
+  }
+}

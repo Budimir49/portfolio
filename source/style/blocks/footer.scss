@@ -2,7 +2,6 @@
 {
   height: rem(185px);
 
-
   &__top
   {
     background-color: #53595c;
@@ -103,6 +102,12 @@
       @include roboto(bold);
       color: #fff;
       text-decoration: none;
+      transition: .4s;
+
+      &:hover
+      {
+        text-decoration: underline;
+      }
 
     }
   }

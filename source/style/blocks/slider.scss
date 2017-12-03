@@ -1,0 +1,72 @@
+.slider
+{
+  display: flex;
+  flex-direction: column;
+  background-color: #e1e4d7;
+
+  &__item-main
+  {
+    height: rem(530px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item-other
+  {
+    height: rem(220px);
+    display: flex;
+
+  }
+
+  &__item-left, &__item-right
+  {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:after
+    {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(#b0b7aa, .7);
+      z-index: 5;
+    }
+  }
+
+
+  &__picture-main
+  {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__picture-left, &__picture-right, &__picture-main
+  {
+
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+
+  }
+
+  &__picture-left, &__picture-right
+  {
+    max-height: rem(220px);
+  }
+
+
+  &__btn-arrow
+  {
+    @include centered();
+  }
+}

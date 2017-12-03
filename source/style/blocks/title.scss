@@ -9,6 +9,7 @@
   @include sansus();
   text-transform: uppercase;
   text-align: center;
+  line-height: 1;
 
   &:after
   {
@@ -25,9 +26,10 @@
   &__picture
   {
     @include centered();
-    z-index: 1;
+    z-index: -1;
     fill: $themeColorTitleBackground;
-    opacity: 0.1;
+    opacity: .2;
+
   }
 
 

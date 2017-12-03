@@ -1,4 +1,12 @@
 mixin title (title, sprite, classes)
     .title(class=classes)= title
-        svg.title__picture
+        svg(width="600" height="120").title__picture
             use(xlink:href=`/img/decor/sprite.svg#${sprite}`)
+
+
+mixin triangle(direction, color)
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none" class=`triangle_fill_${color}`).about__triangle
+        if (direction == "left")
+            polygon(points="0,0 0,100 1000, 100")
+        if (direction == "right")
+            polygon(points="0,100 1000, 100 1000 0")

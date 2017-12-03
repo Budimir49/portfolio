@@ -1,0 +1,52 @@
+.works
+{
+
+  display: flex;
+
+
+  &__left
+  {
+    position: relative;
+    width: 50%
+  }
+
+  &__right
+  {
+    position: relative;
+    width: 50%;
+  }
+
+
+  &__title-left
+  {
+    background-color: $themeColorWrite;
+    height: rem(185px);
+  }
+
+  &__title-right
+  {
+    height: rem(185px);
+    background-color: $themeColorWrite;
+  }
+
+  &__section-title
+  {
+    position: absolute;
+    right: 0;
+    transform: translateX(50%);
+  }
+
+
+  &__slider
+  {
+    height: rem(750px);
+  }
+
+
+  &__description
+  {
+    height: rem(750px);
+    position: relative;
+    background-color: $themeColorBeige;
+  }
+}

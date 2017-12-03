@@ -3,6 +3,7 @@
 
   display: flex;
 
+
   &__item
   {
     margin-right: 30px;
@@ -22,6 +23,7 @@
   &__icon
   {
 
+    transition: .4s;
 
     &_white
     {

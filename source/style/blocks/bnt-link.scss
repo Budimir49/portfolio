@@ -1,0 +1,33 @@
+.bnt-link
+{
+
+  text-decoration: none;
+  background-color: #6c9c5a;
+  border-radius: rem(40px);
+  padding: rem(15px) rem(25px);
+
+  display: inline-flex;
+  align-items: center;
+  transition: .4s;
+
+  &__icon
+  {
+    width: rem(20px);
+    height: rem(20px);
+    fill: #fff;
+  }
+
+  &__text
+  {
+    margin-left: rem(10px);
+    @include roboto(medium);
+    color: #fff;
+  }
+
+  &:hover
+  {
+    background-color: lighten(#6c9c5a, 10%);
+
+  }
+
+}

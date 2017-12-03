@@ -1,0 +1,28 @@
+.about-work
+{
+
+
+
+  &__wrapper
+  {
+    @include centered();
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title
+  {
+    width: rem(350px);
+  }
+
+  &__tech
+  {
+    margin-top: rem(25px);
+    margin-bottom: rem(60px);
+    text-transform: uppercase;
+    @include roboto(medium);
+    color: #4e8839;
+  }
+}

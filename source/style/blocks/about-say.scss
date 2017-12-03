@@ -1,0 +1,71 @@
+.about-say
+{
+  height: rem(1350px);
+  position: relative;
+  background-image: url(/img/bg/about-say.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+
+  &__content
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: rem(790px);
+    flex: 1 1 auto;
+  }
+
+  &__title
+  {
+    margin-top: rem(16px);
+    width: rem(500px);
+  }
+
+  &__feedback
+  {
+    width: rem(380px);
+    margin-top: rem(70px);
+  }
+
+  &__reviews
+  {
+    margin-top: rem(20px);
+  }
+
+  &__leafs
+  {
+    position: absolute;
+
+    &_pos1
+    {
+      top: rem(65px);
+      left: 20%;
+    }
+
+    &_pos2
+    {
+      top: rem(530px);
+      right: 20%;
+    }
+
+    &_pos3
+    {
+      top: rem(620px);
+      left: 25%;
+    }
+  }
+
+  &__btn-arrow
+  {
+    @include centered(x);
+    bottom: rem(240px);
+  }
+}

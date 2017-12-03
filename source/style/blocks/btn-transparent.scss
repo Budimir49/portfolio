@@ -5,5 +5,13 @@
   border: 1px solid #fff;
   color: #fff;
   text-decoration: none;
-  border-radius: 40px;
+  border-radius: rem(40px);
+  transition: .4s;
+
+  &:hover
+  {
+    background-color: #4e8839;
+    border: 1px solid #729e19;
+
+  }
 }
