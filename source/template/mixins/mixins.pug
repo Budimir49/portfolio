@@ -4,8 +4,8 @@ mixin title (title, sprite, classes)
             use(xlink:href=`/img/decor/sprite.svg#${sprite}`)
 
 
-mixin triangle(direction, color)
-    svg(viewBox="0 0 1000 100" preserveAspectRatio="none" class=`triangle_fill_${color}`).about__triangle
+mixin triangle(direction, color, classes)
+    svg(viewBox="0 0 1000 100" preserveAspectRatio="none" class=`triangle_fill_${color} ${classes}`).triangle__svg
         if (direction == "left")
             polygon(points="0,0 0,100 1000, 100")
         if (direction == "right")

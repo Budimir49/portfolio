@@ -1,0 +1,56 @@
+.article
+{
+
+  max-width: rem(980px);
+  margin-bottom: rem(135px);
+  position: relative;
+
+  &__title
+  {
+    @include sansus();
+    font-size: rem(35px);
+    margin-bottom: rem(30px);
+  }
+
+  &__time
+  {
+    color: #4e8839;
+    margin-bottom: rem(25px);
+  }
+
+  &__text
+  {
+    line-height: 1.5;
+
+    p
+    {
+      margin-top: rem(20px);
+    }
+  }
+
+  &__picture
+  {
+    margin-top: rem(35px);
+    width: 100%;
+  }
+
+  &__img
+  {
+    width: 100%;
+  }
+
+
+  &:before
+  {
+    content: '';
+    display: block;
+    position: absolute;
+    height: rem(5px);
+    max-width: rem(680px);
+    width: 100%;
+    background-color: #ecebe4;
+    left: 0;
+    bottom: rem(-60px);
+  }
+}
+

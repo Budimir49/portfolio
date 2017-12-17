@@ -9,6 +9,18 @@ html
   font-size: 16px;
   @include roboto();
   color: $themeColorText;
+
+
+  @include ipads()
+  {
+    font-size: rem(14px);
+  }
+
+  @include iphones()
+  {
+    font-size: rem(14px);
+  }
+
 }
 
 body

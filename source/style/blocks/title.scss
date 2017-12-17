@@ -2,7 +2,7 @@
 {
   color: $themeColorTitle;
   font-size: rem(63px);
-  padding: rem(45px) rem(80px);
+  padding: rem(35px);
   position: relative;
   display: inline-block;
   z-index: 2;
@@ -10,6 +10,11 @@
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
+
+  @include iphones()
+  {
+    font-size: rem(50px);
+  }
 
   &:after
   {
@@ -20,6 +25,7 @@
     width: rem(90px);
     height: rem(3px);
     bottom: rem(15px);
+
   }
 
 
@@ -30,7 +36,20 @@
     fill: $themeColorTitleBackground;
     opacity: .2;
 
+    @include iphones()
+    {
+      width: 100%;
+    }
   }
 
+  &_color_white
+  {
+    color: #fff;
+
+    &:after
+    {
+      background: #fff;
+    }
+  }
 
 }

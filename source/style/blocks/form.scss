@@ -1,0 +1,161 @@
+.form
+{
+
+  &__row
+  {
+    display: flex;
+  }
+
+  &__label
+  {
+    display: flex;
+
+  }
+
+  &__check
+  {
+
+    display: none;
+
+    &:checked + &-fake
+    {
+      background-image: url('/img/icons/check.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+  }
+
+  &__check-fake
+  {
+
+    display: block;
+    width: rem(20px);
+    height: rem(20px);
+    background-color: #6c9c5a;
+    border-radius: rem(2px);
+
+  }
+
+
+
+  &__radio
+  {
+
+    display: none;
+
+    &:checked ~ &-label
+    {
+      color: #6c9c5a;
+    }
+
+    &:checked + &-fake:after
+    {
+      display: block;
+      content: '';
+      @include centered();
+      @include circle(rem(8px), #6c9c5a);
+    }
+
+
+  }
+
+
+
+  &__radio-fake
+  {
+    display: block;
+    @include circle(rem(20px), #fff);
+    position: relative;
+    margin-right: rem(10px);
+
+  }
+
+
+  &__input
+  {
+    width: 100%;
+    font-size: rem(16px);
+    padding: rem(15px) rem(20px);
+    border-radius: rem(25px);
+    border: 0;
+    outline:none;
+    resize: none;
+    @include placecolor(#5d5a55);
+    @include placeSlideOnFocus();
+    position: relative;
+    margin-bottom: rem(20px);
+
+    &_icon_login
+    {
+      padding-left: rem(60px);
+    }
+  }
+
+  &__input-pic
+  {
+    position: relative;
+    width: 100%;
+
+    & > input
+    {
+      padding-left: rem(60px);
+    }
+
+    &:after
+    {
+      position: absolute;
+      top: 0;
+      content: '';
+      display: block;
+      width: rem(48px);
+      height: rem(48px);
+      background-color: #f0efe9;
+      border-top-left-radius: rem(25px);
+      border-bottom-left-radius: rem(25px);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &_login
+    {
+
+      &:after
+      {
+        background-image: url('/img/icons/login.png');
+      }
+    }
+
+    &_password
+    {
+
+      &:after
+      {
+        background-image: url('/img/icons/password.png');
+      }
+    }
+
+  }
+
+
+  &__label
+  {
+    color: #fff;
+  }
+
+  &__check-fake
+  {
+    margin-right: rem(10px);
+  }
+
+  &__radio-label
+  {
+    opacity: .8;
+  }
+
+  &__check-label
+  {
+    opacity: .8;
+  }
+}

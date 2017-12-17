@@ -1,25 +1,63 @@
 .slider
 {
-  display: flex;
-  flex-direction: column;
-  background-color: #e1e4d7;
 
-  &__item-main
+
+  &__description
   {
-    height: rem(530px);
+    height: 100%;
+    position: relative;
+    background-color: $themeColorBeige;
+    width: 50%;
+
+    @include ipads()
+    {
+      width: 100%;
+      height: rem(270px);
+    }
+
+    @include iphones()
+    {
+      height: rem(300px);
+    }
+  }
+
+  &__site
+  {
+    width: 50%;
     display: flex;
+    flex-direction: column;
+    background-color: $themeColorLightGreen;
+
+    height: rem(530px);
     justify-content: center;
     align-items: center;
+
+    @include ipads()
+    {
+      width: 100%;
+      order: -1;
+    }
+
+    @include iphones()
+    {
+      height: rem(400px);
+    }
   }
 
-  &__item-other
+  &__btns
   {
-    height: rem(220px);
-    display: flex;
 
+    display: flex;
+    width: 50%;
+
+    @include ipads()
+    {
+      width: 100%;
+    }
   }
 
-  &__item-left, &__item-right
+
+  &__item
   {
     width: 50%;
     position: relative;
@@ -39,31 +77,29 @@
       background-color: rgba(#b0b7aa, .7);
       z-index: 5;
     }
+
+    @include iphones()
+    {
+      height: rem(130px);
+    }
+
   }
 
 
-  &__picture-main
+  &__picture
   {
     display: block;
     max-width: 100%;
     height: auto;
-  }
-
-  &__picture-left, &__picture-right, &__picture-main
-  {
-
-    display: block;
-    max-width: 100%;
-    height: auto;
-
-
-  }
-
-  &__picture-left, &__picture-right
-  {
     max-height: rem(220px);
   }
 
+  &__main-picture
+  {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 
   &__btn-arrow
   {

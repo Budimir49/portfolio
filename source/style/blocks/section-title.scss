@@ -1,7 +1,12 @@
 .section-title
 {
-  width: rem(1080px);
+  width: 100%;
   height: rem(300px);
   opacity: .2;
   fill: #fff;
+
+  @include iphones()
+  {
+    display: none;
+  }
 }

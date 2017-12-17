@@ -1,0 +1,66 @@
+.blog
+{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $themeColorGray;
+
+  &__content
+  {
+    padding-top: rem(70px);
+    width: 100%;
+    max-width: rem(1800px);
+    margin: auto;
+    flex: 1 1 auto;
+    display: flex;
+
+    @include ipads()
+    {
+      justify-content: center;
+    }
+  }
+
+  &__aside
+  {
+    width: 28%;
+    display: flex;
+    justify-content: flex-end;
+
+    @include laptops()
+    {
+      width: 34%;
+    }
+
+    @include ipads()
+    {
+      display: none;
+    }
+  }
+
+  &__articles
+  {
+    width: 55%;
+
+    @include laptops()
+    {
+      width: 58%;
+    }
+
+    @include ipads()
+    {
+      width: 94%;
+    }
+  }
+
+
+  &__menu
+  {
+    margin-right: rem(120px);
+    margin-bottom: rem(70px);
+
+    @include laptops()
+    {
+      margin-right: rem(100px);
+    }
+  }
+}

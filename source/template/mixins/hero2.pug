@@ -1,4 +1,4 @@
-header.section.hero.hero_high
+header.section.hero.hero_low
     .container
         .hero__header
             ul.socials.hero__socials
@@ -11,17 +11,10 @@ header.section.hero.hero_high
                 svg(width="40" height="30").hamburger__icon
                     use(xlink:href="/img/icons/sprite.svg#hamburger")
 
-        a(href="#").btn-arrow.hero__btn-arrow
-            svg.btn-arrow__icon.btn-arrow__icon_small.btn-arrow__icon_opacity
-                use(xlink:href="/img/icons/sprite.svg#arrow-down")
-
-
         .hero__title
-            svg.section-title
-                use(xlink:href="/img/decor/sprite.svg#portfolio")
             .user.hero__user-block
                 .avatar
                     .avatar__container
                         img(src="/img/content/user.jpg" alt="").avatar__img
-                .user__name.user__name_mt-large.user__name_fz-large Будимир Вяземский
-                .user__desc Личный сайт веб-разработчика
+                +title("Блог", "blog", "title_color_white")
+                .user__desc Статьи которые я написал

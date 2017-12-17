@@ -2,15 +2,15 @@ extends ../main.layout.pug
 
 block content
     section.welcome
-        a(href="").btn-transparent.welcome__btn-auth Авторизоваться
-        .user-block
-            .user.user-block__intro
-                .user__photo
-                    .user__photo-avatar
-                        img(src="/img/content/user.jpg" alt="").user__photo-img
+        a(href="auth.html").btn-transparent.welcome__btn-auth Авторизоваться
+        .intro
+            .user.intro__user
+                .avatar
+                    .avatar__container
+                        img(src="/img/content/user.jpg" alt="").avatar__img
                 .user__name.user__name_mt-small.user__name_fz-small Будимир Вяземский
                 .user__desc Личный сайт веб-разработчика
-            ul.socials.user-block__socials
+            ul.socials.intro__socials
                 each item in ["vk", "gh", "in"]
                     li.socials__item
                         a(href="#" class=`socials__link socials__link_${item}`)

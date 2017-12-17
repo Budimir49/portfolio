@@ -4,16 +4,49 @@
   @include roboto(medium);
   font-size: rem(28px);
 
+  @include ipads()
+  {
+    text-align: center;
+
+  }
+
+
   &__list
   {
     display: flex;
     margin-top: rem(20px);
     margin-bottom:  rem(40px);
+
+    @include ipads()
+    {
+      justify-content: center;
+    }
+
+    @include iphones()
+    {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
 
   &__item
   {
     margin-right: rem(40px);
+
+    @include laptops()
+    {
+      margin-right: rem(35px);
+    }
+
+    @include iphones()
+    {
+      margin-right: 0;
+    }
+
+    &:last-child
+    {
+      margin-right: 0;
+    }
   }
 
 }

@@ -2,15 +2,13 @@
 {
   color: #fff;
 
-  &__photo-img
-  {
-    border-radius: 50%;
-  }
 
   &__name
   {
     @include roboto(medium);
+    text-align: center;
 
+    width: rem(350px);
     &_mt-large
     {
       margin-top: rem(35px);

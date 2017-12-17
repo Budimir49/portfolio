@@ -25,13 +25,7 @@
   &__input
   {
     margin-top: rem(20px);
-    padding: rem(15px) rem(20px);
-    border-radius: rem(25px);
-    border: 0;
-    outline:none;
-    resize: none;
-    @include placecolor(#5d5a55);
-    @include placeSlideOnFocus();
+
 
   }
 }

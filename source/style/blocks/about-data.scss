@@ -5,6 +5,12 @@
   {
     display: flex;
     flex-direction: column;
+
+    @include ipads()
+    {
+      align-items: center;
+    }
+
   }
 
   &-info__title

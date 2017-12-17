@@ -1,10 +1,10 @@
 .about-say
 {
-  height: rem(1350px);
+  //height: rem(1350px);
   position: relative;
   background-image: url(/img/bg/about-say.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: bottom;
 
   display: flex;
@@ -27,12 +27,28 @@
   {
     margin-top: rem(16px);
     width: rem(500px);
+
+    @include iphones()
+    {
+      width: 90%;
+    }
   }
 
   &__feedback
   {
     width: rem(380px);
     margin-top: rem(70px);
+    margin-bottom: rem(150px);
+
+    @include ipads()
+    {
+      margin-bottom: rem(130px);
+    }
+
+    @include ipads()
+    {
+      margin-top: rem(20px);
+    }
   }
 
   &__reviews
@@ -48,18 +64,48 @@
     {
       top: rem(65px);
       left: 20%;
+
+      @include laptops()
+      {
+        left: 2%;
+      }
+
+      @include ipads()
+      {
+        display: none;
+      }
     }
 
     &_pos2
     {
       top: rem(530px);
       right: 20%;
+
+      @include laptops()
+      {
+        right: 2%;
+      }
+
+      @include ipads()
+      {
+        display: none;
+      }
     }
 
     &_pos3
     {
-      top: rem(620px);
+      top: rem(550px);
       left: 25%;
+
+      @include laptops()
+      {
+        left: 15%;
+      }
+
+      @include ipads()
+      {
+        display: none;
+      }
     }
   }
 
@@ -67,5 +113,15 @@
   {
     @include centered(x);
     bottom: rem(240px);
+
+    @include ipads()
+    {
+      bottom: rem(320px);
+    }
+
+    @include iphones()
+    {
+      bottom: rem(390px);
+    }
   }
 }

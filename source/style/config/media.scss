@@ -23,3 +23,14 @@
     @content
   }
 }
+
+
+
+@mixin littleHeight
+{
+  @media screen and (max-height: $minHeight)
+  {
+    @content
+  }
+
+}

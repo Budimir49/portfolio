@@ -15,7 +15,18 @@
     @include centered(x);
     bottom: 5%;
     color: #fff;
+    white-space: nowrap;
 
+    @include iphones()
+    {
+      white-space: normal;
+      text-align: center;
+    }
+
+    @include littleHeight()
+    {
+      display: none;
+    }
   }
 
 

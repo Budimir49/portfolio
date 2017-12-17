@@ -1,21 +1,32 @@
 .footer
 {
-  height: rem(185px);
+
+  width: 100%;
 
   &__top
   {
     background-color: #53595c;
     opacity: 0.85;
-    height: rem(150px);
+    min-height: rem(150px);
     display: flex;
     justify-content: space-between;
+
+    @include ipads()
+    {
+      flex-wrap: wrap;
+    }
+
+    @include iphones()
+    {
+      flex-direction: column;
+    }
   }
 
   &__bottom
   {
     background-color: #7fa870;
     opacity: 0.85;
-    height: rem(35px);
+    min-height: rem(35px);
     color: #fff;
     text-align: center;
     line-height: rem(35px);
@@ -27,11 +38,41 @@
     color: #fff;
     @include roboto(light);
 
+    @include iphones()
+    {
+      display: flex;
+      justify-content: center;
+    }
+
     &-text
     {
       padding-top: rem(30px);
       padding-left: rem(25px);
       width: 70%;
+
+      @include ipads()
+      {
+        width: 80%;
+      }
+
+      @include iphones()
+      {
+        width: 95%;
+        padding-left: 0;
+      }
+    }
+
+    @include ipads()
+    {
+      width: 50%;
+      text-align: left;
+    }
+
+    @include iphones()
+    {
+      width: 100%;
+      text-align: center;
+
     }
   }
 
@@ -48,6 +89,7 @@
       padding-left: rem(25px);
       @include roboto(light);
       opacity: .5;
+
     }
 
     &-text-down
@@ -56,6 +98,19 @@
       padding-left: rem(25px);
       @include roboto(bolt);
       opacity: .5;
+    }
+
+    @include ipads()
+    {
+      width: 100%;
+      padding-bottom: rem(30px);
+      text-align: left;
+    }
+
+    @include iphones()
+    {
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -70,20 +125,54 @@
       display: block;
       @include centered(y);
       background: #69716e;
-      width: 1px;
+      width: rem(1px);
       height: rem(90px);
+
+      @include iphones()
+      {
+        height: rem(1px);
+        width: rem(900px);
+        @include centered(x);
+      }
+
     }
 
     &:before
     {
       left: rem(-2px);
+
+      @include iphones()
+      {
+        top: rem(15px);
+      }
     }
 
     &:after
     {
       right: rem(-2px);
+
+      @include ipads()
+      {
+        display: none;
+      }
+
+      @include iphones()
+      {
+        display: block;
+        top: rem(110px);
+      }
     }
 
+    @include ipads()
+    {
+      width: 50%;
+    }
+
+    @include iphones()
+    {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   &__menu
@@ -92,9 +181,32 @@
     margin-top: rem(30px);
     margin-left: rem(25px);
 
+    @include iphones()
+    {
+      margin-left: 0;
+      justify-content: center;
+    }
+
     &-item
     {
       margin-right: rem(40px);
+
+      &:last-child
+      {
+        margin-right: 0;
+      }
+
+      @include laptops()
+      {
+        margin-right: rem(20px);
+      }
+
+      @include ipads()
+      {
+        margin-right: rem(15px);
+      }
+
+
     }
 
     &-link
@@ -116,6 +228,14 @@
   {
     margin-top: rem(30px);
     margin-left: rem(25px);
+
+    @include iphones()
+    {
+      width: 100%;
+      justify-content: center;
+      margin-left: 0;
+      margin-top: rem(20px);
+    }
   }
 
 }

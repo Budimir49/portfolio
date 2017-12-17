@@ -4,38 +4,46 @@ block content
     include ../mixins/hero.pug
 
     section.section.about
-        .about__left
-            +triangle("left", "beige")
-            +title("Обо мне", "about", "about__section-title")
+        .triangle__container
+            .triangle__place
+                +triangle("left", "beige")
+            .triangle__place
+                +triangle("right", "white", "about__triangle-right")
 
-            .user-about
-                .user-about__picture
-                    img(src="img/content/user_big.jpg" alt="")
-                .user-about__title.subtitle Кто я
-                .user-about__text
-                    p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .about__right
-            +triangle("right", "white")
+        .container__main
+            .container__fluid-left.container_color_biege
+            .about__content
+                .about__who.container_color_biege
+                    +title("Обо мне", "about", "about__section-title")
+                    .user-about
+                        .user-about__picture
+                            img(src="img/content/user_big.jpg" alt="").user-about__img
+                        .user-about__title.subtitle Кто я
+                        .user-about__text
+                            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .about__useful.container_color_white
+                    .about-data
+                        .about-data__description.about-user-info
+                            .about-user-info__title.subtitle Чем я могу быть вам полезен
+                            .about-user-info__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
+                        .about-data__content
+                            ul.skills
+                                each skillObj in skills
+                                    each skillsCat, category in skillObj
+                                        li.skills__item
+                                            .skill-section= category
+                                                ul.skill-section__list
+                                                    each skillName in skillsCat
+                                                        li.skill-section__item
+                                                            .skill
+                                                                svg(viewBox="0 0 110 110").skill__circle
+                                                                    circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
+                                                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").skill__circle-second.skill__circle-second_circle-60
+                                                                .skill__name= skillName
+            .container__fluid-right.container_color_white
 
-            .about-data
-                .about-data__description.about-user-info
-                    .about-user-info__title.subtitle Чем я могу быть вам полезен
-                    .about-user-info__text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачина Backend. Но давайте по порядку.
-                .about-data__content
-                    ul.skills
-                        each skillObj in skills
-                            each skillsCat, category in skillObj
-                                li.skills__item
-                                    .skill-section= category
-                                        ul.skill-section__list
-                                            each skillName in skillsCat
-                                                li.skill-section__item
-                                                    .skill
-                                                        svg(viewBox="0 0 110 110").skill__circle
-                                                            circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
-                                                            circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").skill__circle-second.skill__circle-second_circle-60
-                                                        .skill__name= skillName
+
 
     section.section.map
         .map__content

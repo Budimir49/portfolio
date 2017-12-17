@@ -8,12 +8,18 @@
   flex-direction: column;
 
 
+  @include iphones()
+  {
+    height: calc(100vh + 580px);
+  }
+
   &__content
   {
+    position: relative;
     flex: 1 1 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
   }
 
 

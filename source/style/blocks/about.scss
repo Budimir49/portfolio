@@ -1,46 +1,70 @@
 .about
 {
-  display: flex;
-  height: rem(900px);
+  &__content
+  {
+    max-width: rem(1800px);
+    width: 100%;
+    display: flex;
 
-  &__left
+    @include ipads()
+    {
+      flex-direction: column;
+    }
+  }
+
+  &__who
   {
     width: 50%;
-    background-color: $themeColorBeige;
-    position: relative;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
 
     @include laptops()
     {
       flex-direction: column;
       align-items: center;
     }
+
+    @include ipads()
+    {
+      width: 100%
+    }
   }
 
-  &__right
+  &__useful
   {
     width: 50%;
-    background-color: $themeColorWrite;
-    position: relative;
-  }
 
-  &__triangle
-  {
-    position: absolute;
-    bottom: 100%;
+    @include ipads()
+    {
+      width: 100%
+    }
   }
 
   &__section-title
   {
     width: 50%;
     margin-top: rem(-40px);
+    height: rem(120px);
 
     @include laptops()
     {
       width: 100%;
+      margin-top: rem(5px);
     }
+
+    @include ipads()
+    {
+      margin-top: rem(20px);
+    }
+  }
+
+  &__triangle-right
+  {
+
+    @include ipads()
+    {
+      fill: $themeColorBeige !important;
+    }
+
   }
 
 }

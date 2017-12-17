@@ -1,6 +1,15 @@
 .reviews {
   display: flex;
 
+
+  @include iphones()
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
   &__item
   {
     width: 50%;
@@ -8,6 +17,12 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+
+    @include iphones()
+    {
+      width: 95%;
+      margin-bottom: rem(50px);
+    }
   }
 
   &__icon

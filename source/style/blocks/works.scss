@@ -1,52 +1,44 @@
 .works
 {
+  background-color: $themeColorWrite;
 
-  display: flex;
-
-
-  &__left
-  {
-    position: relative;
-    width: 50%
-  }
-
-  &__right
-  {
-    position: relative;
-    width: 50%;
-  }
-
-
-  &__title-left
-  {
-    background-color: $themeColorWrite;
-    height: rem(185px);
-  }
-
-  &__title-right
-  {
-    height: rem(185px);
-    background-color: $themeColorWrite;
-  }
 
   &__section-title
   {
     position: absolute;
     right: 0;
     transform: translateX(50%);
+    top: rem(25px);
   }
 
+
+  &__header
+  {
+    max-width: rem(1800px);
+    height: rem(200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  &__title
+  {
+    height: rem(130px);
+  }
 
   &__slider
   {
-    height: rem(750px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: rem(1800px);
+
+    @include ipads()
+    {
+      flex-wrap: nowrap;
+    }
   }
 
-
-  &__description
-  {
-    height: rem(750px);
-    position: relative;
-    background-color: $themeColorBeige;
-  }
 }

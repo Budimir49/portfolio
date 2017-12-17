@@ -15,6 +15,17 @@
   &__title
   {
     width: rem(350px);
+
+    @include ipads()
+    {
+      width: rem(572px);
+    }
+
+    @include iphones()
+    {
+      width: rem(350px);
+
+    }
   }
 
   &__tech
@@ -24,5 +35,11 @@
     text-transform: uppercase;
     @include roboto(medium);
     color: #4e8839;
+
+    @include ipads()
+    {
+      margin-bottom: rem(30px);
+    }
+
   }
 }

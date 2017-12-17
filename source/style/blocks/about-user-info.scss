@@ -2,15 +2,26 @@
 {
   margin-top: rem(20px);
 
+
   &__title
   {
     width: rem(280px);
     margin: 0 auto;
+
+    @include ipads()
+    {
+      margin-top: rem(30px);
+    }
   }
 
   &__text
   {
     margin: rem(30px) rem(40px);
     line-height: 1.5;
+
+    @include ipads()
+    {
+      width: 60%;
+    }
   }
 }

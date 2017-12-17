@@ -2,6 +2,20 @@
 {
   width: rem(120px);
   height: rem(120px);
+
+  @include laptops()
+  {
+    width: rem(110px);
+    height: rem(110px);
+  }
+
+  @include ipads()
+  {
+    width: rem(150px);
+    height: rem(150px);
+    margin-bottom: rem(30px);
+  }
+
   position: relative;
 
   &__name
@@ -19,7 +33,6 @@
   {
     fill: none;
     stroke-width: 20;
-
 
     &:hover &-second_circle-0
     {

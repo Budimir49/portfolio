@@ -5,9 +5,32 @@
   display: flex;
   flex-direction: column;
 
+  @include ipads()
+  {
+    width: 60%;
+  }
+
+  @include iphones()
+  {
+    width: 100%;
+    margin: rem(20px) 0;
+    align-items: center;
+  }
+
   &__picture
   {
+
     margin-bottom: rem(40px);
+
+    @include laptops()
+    {
+      margin-bottom: rem(20px);
+    }
+
+    @include ipads()
+    {
+      margin-top: rem(20px);
+    }
   }
 
   &__title
@@ -15,12 +38,33 @@
     width: rem(120px);
     margin: 0 auto;
     text-align: center;
+
+    @include ipads()
+    {
+      margin-top: rem(20px);
+    }
+
+
   }
 
   &__text
   {
     margin-top: rem(20px);
     line-height: 1.5;
+
+    & p
+    {
+      margin-bottom: rem(20px);
+    }
+
+    @include iphones()
+    {
+      width: 90%;
+    }
   }
 
+  &__img
+  {
+    max-width: 100%;
+  }
 }

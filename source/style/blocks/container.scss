@@ -1,0 +1,39 @@
+.container
+{
+  margin: 0 auto;
+  max-width: rem(1800px);
+  position: relative;
+  height: 100%;
+
+  &__main
+  {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__fluid-left
+  {
+    flex-grow: 1;
+  }
+
+  &__fluid-right
+  {
+    flex-grow: 1;
+  }
+
+
+  &_color_biege
+  {
+    background-color: $themeColorBeige;
+  }
+
+  &_color_light-green
+  {
+    background-color: $themeColorLightGreen
+  }
+
+  &_color_white
+  {
+    background-color: $themeColorWrite
+  }
+}

@@ -5,37 +5,39 @@ block content
 
 
     section.section.works
-        .works__left
-            +triangle("left", "white")
-            .works__title-left
-                +title("Мои работы", "works", "works__section-title")
-            .works__description.about-work
-                .about-work__wrapper
-                    .subtitle.about-work__title Сайт школы онлайн образования
-                    .about-work__tech HTML, CSS, JAVASCRIPT
-                    a(href="#").bnt-link
-                        svg.bnt-link__icon
-                            use(xlink:href="/img/icons/sprite.svg#chain")
-                        span.bnt-link__text Посмотреть сайт
+        .triangle__container
+            .triangle__place
+                +triangle("left", "white")
+            .triangle__place
+                +triangle("right", "white")
+        .works__header
+            +title("Мои работы", "works", "works__title")
 
-
-        .works__right
-            +triangle("right", "white")
-            .works__title-right
+        .container__main
+            .container__fluid-left.container_color_biege
             .works__slider.slider
-                .slider__item-main
-                    img(src="/img/works/01.png").slider__picture-main
-                .slider__item-other
-                    .slider__item-left
-                        img(src="/img/works/02.png").slider__picture-left
+                .slider__description.about-work
+                    .about-work__wrapper
+                        .subtitle.about-work__title Сайт школы онлайн образования
+                        .about-work__tech HTML, CSS, JAVASCRIPT
+                        a(href="#").bnt-link
+                            svg.bnt-link__icon
+                                use(xlink:href="/img/icons/sprite.svg#chain")
+                            span.bnt-link__text Посмотреть сайт
+                .slider__site
+                    img(src="/img/works/01.png").slider__main-picture
+                .slider__btns
+                    .slider__item
+                        img(src="/img/works/02.png").slider__picture
                         a(href="#").btn-arrow.slider__btn-arrow
                             svg.btn-arrow__icon.btn-arrow__icon_big
                                 use(xlink:href="/img/icons/sprite.svg#arrow-down")
-                    .slider__item-right
-                        img(src="/img/works/03.png").slider__picture-right
+                    .slider__item
+                        img(src="/img/works/03.png").slider__picture
                         a(href="#").btn-arrow.slider__btn-arrow
                             svg.btn-arrow__icon.btn-arrow__icon_big.btn-arrow__icon_up
                                 use(xlink:href="/img/icons/sprite.svg#arrow-down")
+            .container__fluid-right.container_color_light-green
 
     section.section.about-say
         .about-say__content
@@ -63,9 +65,9 @@ block content
             .about-say__feedback.feedback
                 .feedback__title.subtitle Связаться со мной
                 form.feedback__form
-                    input(placeholder="Имя").feedback__input
-                    input(placeholder="E-mail").feedback__input
-                    textarea(rows="6" placeholder="Ваше сообщение").feedback__input
+                    input(placeholder="Имя").feedback__input.form__input
+                    input(placeholder="E-mail" type="email").feedback__input.form__input
+                    textarea(rows="6" placeholder="Ваше сообщение").feedback__input.form__input
                 ul.btns
                     li.btns__item
                         a(href="works.html").btns__link Отправить
