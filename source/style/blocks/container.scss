@@ -4,11 +4,13 @@
   max-width: rem(1800px);
   position: relative;
   height: 100%;
+  position: relative;
 
   &__main
   {
     display: flex;
     justify-content: center;
+    height: 100%;
   }
 
   &__fluid-left

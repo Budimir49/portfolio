@@ -1,15 +1,20 @@
-header.section.hero.hero_low
+header.section.hero.hero_high
+    +water
     .container
-        .hero__header
-            ul.socials.hero__socials
-                each item in ["vk", "gh", "in"]
-                    li.socials__item
-                        a(href="#" class=`socials__link socials__link_${item}`)
-                            svg(width="30" height="22").socials__icon.socials__icon_white.socials__icon_hover_green
-                                use(xlink:href=`/img/social/sprite.svg#${item}`)
-            a(href="").hamburger.hero__hamburger
-                svg(width="40" height="30").hamburger__icon
-                    use(xlink:href="/img/icons/sprite.svg#hamburger")
+        ul.socials.hero__socials
+            each item in ["vk", "gh", "in"]
+                li.socials__item
+                    a(href="#" class=`socials__link socials__link_${item}`)
+                        svg(width="30" height="22").socials__icon.socials__icon_white.socials__icon_hover_green
+                            use(xlink:href=`/img/social/sprite.svg#${item}`)
+        .hero__hamburger.hamburger
+            .hamburger__spinner.hamburger__spinner_top
+            .hamburger__spinner.hamburger__spinner_mid
+            .hamburger__spinner.hamburger__spinner_bot
+
+        a(href="#").btn-arrow.hero__btn-arrow
+            svg.btn-arrow__icon.btn-arrow__icon_small.btn-arrow__icon_opacity
+                use(xlink:href="/img/icons/sprite.svg#arrow-down")
 
         .hero__title
             .user.hero__user-block

@@ -20,6 +20,7 @@ $.gulp.task('default', $.gulp.series(
     $.gulp.parallel(
         'sass',
         'pug',
+        'js:foundation',
         'js:process',
         'css:foundation'
     ),

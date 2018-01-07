@@ -1,0 +1,119 @@
+.menu-fullscreen
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  visibility: hidden;
+
+  &_visible
+  {
+    visibility: visible;
+  }
+
+  &__list
+  {
+    z-index: 35;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+  }
+
+  &__item
+  {
+    animation: unscale .5s linear forwards;
+    transform: scale(0,0);
+    transition: 1s;
+    opacity: 0;
+
+    &_active
+    {
+      animation: scale .5s linear forwards;
+      transform: scale(1,1);
+
+      @for $i from 2 through 4
+      {
+        &:nth-child(#{$i})
+        {
+          $menuAnimationDelay : ($i*0.15s-0.15s);
+          animation-delay: $menuAnimationDelay;
+        }
+      }
+
+      opacity: 1;
+    }
+  }
+
+  &:after, &:before
+  {
+    content: '';
+    display: block;
+    background-color: #649559;
+    opacity: 0.9;
+    z-index: 31;
+    height: 100%;
+    width: 50%;
+    transition: transform .5s;
+  }
+
+  &:after
+  {
+    transform: translateX(100%);
+  }
+
+  &:before
+  {
+    transform: translateX(-100%);
+  }
+
+  &_active {
+    visibility: visible;
+
+    &:before
+    {
+      transform: translateX(0%);
+    }
+    &:after {
+      transform: translateX(0%);
+    }
+  }
+
+  &__link
+  {
+    color: #fff;
+    text-decoration: none;
+
+    &:after
+    {
+      content: '';
+      display: block;
+      @include centered(x);
+      background: #fff;
+      width: 0;
+      height: rem(3px);
+      bottom: rem(15px);
+      transition: .5s;
+    }
+
+
+
+    &:hover
+    {
+
+      &:after
+      {
+        width: rem(110px);
+      }
+    }
+
+
+  }
+}

@@ -25,9 +25,7 @@
     width: rem(90px);
     height: rem(3px);
     bottom: rem(15px);
-
   }
-
 
   &__picture
   {
@@ -52,4 +50,11 @@
     }
   }
 
+  &_nounderline
+  {
+    &:after
+    {
+      display: none;
+    }
+  }
 }

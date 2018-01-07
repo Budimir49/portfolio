@@ -1,7 +1,6 @@
 .triangle
 {
-  height: rem(160px);
-  width: 100%;
+
 
   &__container
   {
@@ -12,6 +11,7 @@
   {
     position: relative;
     width: 50%;
+    z-index: 20;
   }
 
   &__svg

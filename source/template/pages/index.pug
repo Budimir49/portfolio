@@ -1,26 +1,59 @@
 extends ../main.layout.pug
 
 block content
+
+    +water
     section.welcome
         a(href="auth.html").btn-transparent.welcome__btn-auth Авторизоваться
-        .intro
-            .user.intro__user
-                .avatar
-                    .avatar__container
-                        img(src="/img/content/user.jpg" alt="").avatar__img
-                .user__name.user__name_mt-small.user__name_fz-small Будимир Вяземский
-                .user__desc Личный сайт веб-разработчика
-            ul.socials.intro__socials
-                each item in ["vk", "gh", "in"]
-                    li.socials__item
-                        a(href="#" class=`socials__link socials__link_${item}`)
-                            svg(width="30" height="22").socials__icon.socials__icon_grey.socials__icon_hover_green
-                                use(xlink:href=`/img/social/sprite.svg#${item}`)
-            ul.btns
-                li.btns__item
-                    a(href="works.html").btns__link Мои работы
-                li.btns__item
-                    a(href="about.html").btns__link Обо мне
-                li.btns__item
-                    a(href="blog.html").btns__link Блог
+        .flipper
+            .flipper__container
+                .intro
+                    .user.intro__user
+                        .avatar
+                            .avatar__container
+                                img(src="/img/content/user.jpg" alt="").avatar__img
+                        .user__name.user__name_mt-small.user__name_fz-small Будимир Вяземский
+                        .user__desc Личный сайт веб-разработчика
+                    ul.socials.intro__socials
+                        each item in ["vk", "gh", "in"]
+                            li.socials__item
+                                a(href="#" class=`socials__link socials__link_${item}`)
+                                    svg(width="30" height="22").socials__icon.socials__icon_grey.socials__icon_hover_green
+                                        use(xlink:href=`/img/social/sprite.svg#${item}`)
+                    ul.btns
+                        li.btns__item
+                            a(href="works.html").btns__link Мои работы
+                        li.btns__item
+                            a(href="about.html").btns__link Обо мне
+                        li.btns__item
+                            a(href="blog.html").btns__link Блог
+
+                .intro.intro_rotate
+                    .intro__title.subtitle.subtitle_color_white Авторизуйтесь
+
+                    form.form.intro__form
+                        .form__input-pic.form__input-pic_login
+                            input(placeholder="Логин").form__input
+                        .form__input-pic.form__input-pic_password
+                            input(placeholder="Пароль" type="password").form__input
+                        label.form__label
+                            input(type="checkbox").form__check
+                            span.form__check-fake
+                            span.form__check-label Я человек
+                        .intro__label Вы точно не робот?
+                        .form__row
+                            label.form__label.intro__radio
+                                input(type="radio" name="robot").form__radio
+                                span.form__radio-fake
+                                span.form__radio-label Да
+                            label.form__label
+                                input(type="radio" name="robot").form__radio
+                                span.form__radio-fake
+                                span.form__radio-label Не уверен
+                    ul.btns
+                        li.btns__item.btns__item_half
+                            a(href="").btns__link.intro__on-main На главную
+                        li.btns__item.btns__item_half
+                            a(href="#").btns__link Войти
+
         .welcome__text © Будимир Вяземский | создано с любовью в LoftSchool | 2017

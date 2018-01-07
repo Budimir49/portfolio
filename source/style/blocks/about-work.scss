@@ -2,6 +2,22 @@
 {
 
 
+  height: 100%;
+  position: relative;
+  background-color: $themeColorBeige;
+  width: 50%;
+
+  @include ipads()
+  {
+    width: 100%;
+    height: rem(270px);
+  }
+
+  @include iphones()
+  {
+    height: rem(270px);
+  }
+
 
   &__wrapper
   {

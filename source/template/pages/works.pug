@@ -15,28 +15,56 @@ block content
 
         .container__main
             .container__fluid-left.container_color_biege
-            .works__slider.slider
-                .slider__description.about-work
+            .works__sliders
+                .about-work
                     .about-work__wrapper
                         .subtitle.about-work__title Сайт школы онлайн образования
                         .about-work__tech HTML, CSS, JAVASCRIPT
-                        a(href="#").bnt-link
+                        a(href="").bnt-link.about-work__url
                             svg.bnt-link__icon
                                 use(xlink:href="/img/icons/sprite.svg#chain")
                             span.bnt-link__text Посмотреть сайт
-                .slider__site
-                    img(src="/img/works/01.png").slider__main-picture
-                .slider__btns
-                    .slider__item
-                        img(src="/img/works/02.png").slider__picture
-                        a(href="#").btn-arrow.slider__btn-arrow
+                .works__slide-show.slide-show
+                    ul.slide-show__list
+                        li.slide-show__item.active
+                            img(src="/img/works/01.png").slide-show__img
+                            .slide-show__text Сайт школы онлайн образования
+                            .slide-show__tech HTML, CSS, JAVASCRIPT
+                            .slide-show__url http://www.petya.ru1
+                        li.slide-show__item
+                            img(src="/img/works/02.png").slide-show__img
+                            .slide-show__text Сайт о духовной шляпентохе
+                            .slide-show__tech React, php, css
+                            .slide-show__url http://www.petya.ru2
+                        li.slide-show__item
+                            img(src="/img/works/03.png").slide-show__img
+                            .slide-show__text Сайт школы мега-дизайна
+                            .slide-show__tech python, pug, scss
+                            .slide-show__url http://www.petya.ru3
+                .works__slider
+                    .slider.slider_first
+                        ul.slider__list
+                            li.slider__item
+                                img(src="/img/works/01.png").slider__picture
+                            li.slider__item.active
+                                img(src="/img/works/02.png").slider__picture
+                            li.slider__item
+                                img(src="/img/works/03.png").slider__picture
+                        a(href="").btn-arrow.slider__btn-arrow
                             svg.btn-arrow__icon.btn-arrow__icon_big
                                 use(xlink:href="/img/icons/sprite.svg#arrow-down")
-                    .slider__item
-                        img(src="/img/works/03.png").slider__picture
-                        a(href="#").btn-arrow.slider__btn-arrow
+                    .slider.slider_opposite
+                        ul.slider__list
+                            li.slider__item
+                                img(src="/img/works/01.png").slider__picture
+                            li.slider__item
+                                img(src="/img/works/02.png").slider__picture
+                            li.slider__item.active
+                                img(src="/img/works/03.png").slider__picture
+                        a(href="").btn-arrow.slider__btn-arrow
                             svg.btn-arrow__icon.btn-arrow__icon_big.btn-arrow__icon_up
                                 use(xlink:href="/img/icons/sprite.svg#arrow-down")
+
             .container__fluid-right.container_color_light-green
 
     section.section.about-say
@@ -84,5 +112,6 @@ block content
 
         include ../mixins/footer.pug
 
+    include ../mixins/menu-fullscreen.pug
 
 

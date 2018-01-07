@@ -36,11 +36,11 @@ block content
                                                 ul.skill-section__list
                                                     each skillName in skillsCat
                                                         li.skill-section__item
-                                                            .skill
+                                                            .skill("data-fill"= skillName[1])
                                                                 svg(viewBox="0 0 110 110").skill__circle
                                                                     circle(r="45" cx="50%" cy="50%" fill="none").skill__circle-first
-                                                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").skill__circle-second.skill__circle-second_circle-60
-                                                                .skill__name= skillName
+                                                                    circle(r="45" cx="50%" cy="50%"  transform="rotate(-90 55 55)").skill__circle-second
+                                                                .skill__name= skillName[0]
             .container__fluid-right.container_color_white
 
 
@@ -72,6 +72,6 @@ block content
                             .contacts__text Новосибирск, ул. Инская д.14
 
         include ../mixins/footer.pug
-
+    include ../mixins/menu-fullscreen.pug
 
 

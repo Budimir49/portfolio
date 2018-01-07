@@ -1,0 +1,18 @@
+.flipper
+{
+
+  width: rem(380px);
+  height: rem(380px);
+  @include centered();
+  z-index: 20;
+  perspective: 1000px;
+
+  &__container
+  {
+    position: relative;
+    z-index: 30;
+    transition: 1s;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+  }
+}

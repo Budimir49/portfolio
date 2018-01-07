@@ -17,16 +17,17 @@ module.exports = {
     pathNormalizeCss:  './node_modules/normalize.css/normalize.css',
     pathjQuery:  './node_modules/jquery/dist/jquery.min.js',
 
-    skills : {
+
+	skills : {
         "skills" : [
             {
-                "Frontend" : ['HTML5', 'CSS3', 'JavaScript & jQuery']
+                "Frontend" : [['HTML5', 65], ['CSS3', 70], ['JavaScript & jQuery', 55], ['React', 100]]
             },
             {
-                "Backend" : ['PHP', 'MySQL', 'Node.js & npm', 'Mongo.db']
+				"Backend" : [['PHP', 70], ['Node.js & npm', 40], ['Mongo.db', 30]]
             },
             {
-                "WorkFlow" : ['Git', 'Gulp', 'Bower']
+                "WorkFlow" : [['Git', 45], ['Gulp', 30], ['Bower', 10]]
             }
         ]
     }

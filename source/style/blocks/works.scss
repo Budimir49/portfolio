@@ -27,7 +27,7 @@
     height: rem(130px);
   }
 
-  &__slider
+  &__sliders
   {
     display: flex;
     flex-direction: column;
@@ -38,6 +38,19 @@
     @include ipads()
     {
       flex-wrap: nowrap;
+    }
+  }
+
+  &__slider
+  {
+    display: flex;
+    width: 50%;
+
+    height: rem(220px);
+
+    @include ipads()
+    {
+      width: 100%;
     }
   }
 

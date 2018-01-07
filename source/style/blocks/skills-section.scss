@@ -4,6 +4,7 @@
   @include roboto(medium);
   font-size: rem(28px);
 
+
   @include ipads()
   {
     text-align: center;
