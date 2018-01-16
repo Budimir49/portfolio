@@ -198,6 +198,9 @@ var menuBlog = (function () {
         })
     });
 
+    $(window).resize(function() {
+        setDataArticleOffset();
+    });
 
     //фунция заполняет data-article-offset у всех пунктов меню
     var setDataArticleOffset = function () {
@@ -222,7 +225,6 @@ var menuBlog = (function () {
     
 } ());
 
-
 var skillLoad = (function () {
 
     var scrollAbout = function (container) {
@@ -230,12 +232,8 @@ var skillLoad = (function () {
         $(document).scroll(function () {
             var wrapperOffset = container.offset().top,
                 skill = $('.skill');
-                // circle = $('.skill__circle-second');
-                 // skill__circle-second_circle-60
-            // console.log(window.scrollY, wrapperOffset);
-            if(window.scrollY > wrapperOffset - 200) {
 
-
+            if(window.scrollY > wrapperOffset - 300) {
 
                 skill.each(function (i, el) {
                     let block = $(el).find('.skill__circle'),
@@ -251,50 +249,9 @@ var skillLoad = (function () {
 
                     }, 200 + (i * 200));
                 });
-
-
-                // $.each(skill, function(i, el) {
-                //
-                //
-                // });
-
-
-
-
-                // skill.toArray().reduce(
-                //     function(acc, cur) {
-                //         let circle = $(this).find('.skill__circle-second');
-                //         return acc.then(function() {
-                //             return $(cur).delay(800).promise().then(function() {
-                //                 circle.addClass('skill__circle-second_circle-50')
-                //             });
-                //         })
-                //     }, Promise.resolve());
-
-                // skill.each(function () {
-                //     let fill = $(this).attr('data-fill'),
-                //         className = 'skill__circle-second_circle-' + fill,
-                //         circle = $(this).find('.skill__circle-second'),
-                //         cicleDeffered = $.Deferred();
-                //
-                //     setTimeout(function () {
-                //         cicleDeffered.resolve();
-                //         console.log(1);
-                //     }, 1000);
-                //
-                //     cicleDeffered.done(function(){
-                //         circle.addClass(className);
-                //     })
-                //
-                // });
-            } else {
-
             }
         });
     };
-
-
-
 
 
     return {
@@ -304,39 +261,10 @@ var skillLoad = (function () {
     }
 } ());
 
-
-$(document).ready(function () {
-    var blogContainer = $('.blog__content'),
-        aboutContainer = $('.about-data');
+let fullScreenMenu = (function () {
 
 
-    if (blogContainer.length) menuBlog.init(blogContainer);
-    if (aboutContainer.length) skillLoad.init(aboutContainer);
-
-    preloader.init();
-    slider.init();
-
-
-
-    $('.welcome__btn-auth').on('click', function (e) {
-        e.preventDefault();
-        var intro = $('.flipper__container'),
-            btnAuth = $('.welcome__btn-auth');
-        intro.css('transform', 'rotateY(180deg)');
-        btnAuth.fadeOut();
-    });
-
-
-    $('.intro__on-main').on('click', function (e) {
-        e.preventDefault();
-        var intro = $('.flipper__container'),
-            btnAuth = $('.welcome__btn-auth');
-        intro.css('transform', 'rotateY(0deg)');
-        btnAuth.fadeIn();
-    });
-
-    $('.hero__hamburger').on('click', function () {
-
+    let toggleMenu = function () {
         let top = $('.hamburger__spinner_top'),
             mid = $('.hamburger__spinner_mid'),
             bot = $('.hamburger__spinner_bot'),
@@ -398,8 +326,76 @@ $(document).ready(function () {
         setTimeout(function () {
             menu.toggleClass('menu-fullscreen_visible');
         },500)
+    };
+
+
+
+    return {
+        init: function () {
+
+            $('.hero__hamburger').on('click', toggleMenu);
+
+        }
+    }
+} ());
+
+
+
+
+$(document).ready(function () {
+    let blogContainer = $('.blog__content'),
+        aboutContainer = $('.about-data');
+
+    if (blogContainer.length) menuBlog.init(blogContainer);
+    if (aboutContainer.length) skillLoad.init(aboutContainer);
+
+    preloader.init();
+    slider.init();
+    fullScreenMenu.init();
+
+
+    $('.welcome__btn-auth').on('click', function (e) {
+        e.preventDefault();
+        let intro = $('.flipper__container'),
+            btnAuth = $('.welcome__btn-auth');
+        intro.css('transform', 'rotateY(180deg)');
+        btnAuth.fadeOut();
     });
 
 
+    $('.intro__on-main').on('click', function (e) {
+        e.preventDefault();
+        let intro = $('.flipper__container'),
+            btnAuth = $('.welcome__btn-auth');
+        intro.css('transform', 'rotateY(0deg)');
+        btnAuth.fadeIn();
+    });
+
+    $('.hero__btn-arrow').on('click', function (e) {
+
+        e.preventDefault();
+        let container = $('.hero'),
+            sublings = container.siblings(),
+            offset = sublings.eq(0).offset().top;
+
+        $('body,html').animate({
+            scrollTop: offset
+        },500);
+
+    });
+
+    $('.about-say__btn-arrow').on('click', function (e) {
+
+        e.preventDefault();
+        let container = $('.works'),
+            offset = container.offset().top;
+
+        $('body,html').animate({
+            scrollTop: offset
+        },500);
+
+    })
+
 });
+
 

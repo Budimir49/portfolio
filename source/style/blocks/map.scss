@@ -1,11 +1,11 @@
 .map
 {
   height: 100vh;
-  background-image: url(/img/bg/map.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
+  position: relative;
 
 
   @include iphones()

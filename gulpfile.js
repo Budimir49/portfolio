@@ -21,6 +21,7 @@ $.gulp.task('default', $.gulp.series(
         'sass',
         'pug',
         'js:foundation',
+        'js:desktop',
         'js:process',
         'css:foundation'
     ),

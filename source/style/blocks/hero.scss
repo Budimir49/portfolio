@@ -6,25 +6,7 @@
   background-image: url(/img/bg/about.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
-  &_high
-  {
-    height: 100vh;
-
-  }
-
-  &_low
-  {
-    height: rem(440px);
-    background-position-y: 40%; /* Положение фона */
-
-    @include iphones()
-    {
-      height: 100vh;
-      background-position-y: 10%;
-    }
-  }
-
+  height: 100vh;
 
   &:before
   {
@@ -44,12 +26,9 @@
   {
     @include centered(x);
     bottom: rem(90px);
+    z-index: 20;
   }
 
-  &__header
-  {
-
-  }
 
   &__hamburger
   {

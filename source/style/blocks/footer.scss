@@ -3,6 +3,12 @@
 
   width: 100%;
 
+  &_absolute
+  {
+    position: absolute;
+    bottom: 0;
+  }
+
   &__top
   {
     background-color: #53595c;

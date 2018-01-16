@@ -47,6 +47,7 @@
   &__btn-arrow
   {
     @include centered();
+    z-index: 10;
   }
 
 

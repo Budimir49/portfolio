@@ -20,7 +20,7 @@ block content
                             img(src="img/content/user_big.jpg" alt="").user-about__img
                         .user-about__title.subtitle Кто я
                         .user-about__text
-                            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p Я веб разработчик из Махачкалы. Мне 13 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                 .about__useful.container_color_white
                     .about-data
@@ -46,32 +46,188 @@ block content
 
 
     section.section.map
-        .map__content
-            .contacts
-                .subtitle.contacts__title Контакты
-                ul.contacts__list
-                    li.contacts__item
-                        a(href="#").contacts__link
-                            svg(width="24" height="24").contacts__icon
-                                use(xlink:href="/img/icons/sprite.svg#skype")
-                            .contacts__text skype_kdn
-                    li.contacts__item
-                        a(href="#").contacts__link
-                            svg(width="24" height="16").contacts__icon
-                                use(xlink:href="/img/icons/sprite.svg#email")
-                            .contacts__text petich@gmail.com
-                    li.contacts__item
-                        a(href="#").contacts__link
-                            svg(width="17" height="23").contacts__icon
-                                use(xlink:href="/img/icons/sprite.svg#phone")
-                            .contacts__text +7906 488 89 87
-                    li.contacts__item
-                        a(href="#").contacts__link
-                            svg(width="16" height="21").contacts__icon
-                                use(xlink:href="/img/icons/sprite.svg#address")
-                            .contacts__text Новосибирск, ул. Инская д.14
-
-        include ../mixins/footer.pug
+        .map__content#map
+        .contacts
+            .subtitle.contacts__title Контакты
+            ul.contacts__list
+                li.contacts__item
+                    a(href="#").contacts__link
+                        svg(width="24" height="24").contacts__icon
+                            use(xlink:href="/img/icons/sprite.svg#skype")
+                        .contacts__text skype_kdn
+                li.contacts__item
+                    a(href="#").contacts__link
+                        svg(width="24" height="16").contacts__icon
+                            use(xlink:href="/img/icons/sprite.svg#email")
+                        .contacts__text petich@gmail.com
+                li.contacts__item
+                    a(href="#").contacts__link
+                        svg(width="17" height="23").contacts__icon
+                            use(xlink:href="/img/icons/sprite.svg#phone")
+                        .contacts__text +7906 488 89 87
+                li.contacts__item
+                    a(href="#").contacts__link
+                        svg(width="16" height="21").contacts__icon
+                            use(xlink:href="/img/icons/sprite.svg#address")
+                        .contacts__text Махачкала, ул. Магомеда  д.14
+        +footer("footer_absolute")
     include ../mixins/menu-fullscreen.pug
 
+    script.
+        function initMap() {
 
+            var uluru = {lat: 42.9944802, lng: 47.4809255};
+
+            var uluruMark = {lat: 42.994594, lng: 47.471956};
+
+            var styles = [
+                {
+                    "stylers": [
+                        {
+                            "color": "#f2f2f2"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "color": "#b5b5b5"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "color": "#676767"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.business",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "stylers": [
+                        {
+                            "color": "#d6d6d6"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "color": "#2f2bd5"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#676767"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "stylers": [
+                        {
+                            "color": "#86a77a"
+                        }
+                    ]
+                }
+            ]
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru,
+                styles: styles,
+                disableDefaultUI: true
+
+
+            });
+            var marker = new google.maps.Marker({
+                position: uluruMark,
+                map: map,
+
+                icon: {
+                    url: "img/icons/marker.svg",
+                    scaledSize: new google.maps.Size(60, 85)
+                }
+            });
+
+        }
+    script(async = '', defer = '', src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAtBiY7YMGNwysNQw5s-T6uN2K-AdD7t8Y&callback=initMap')
