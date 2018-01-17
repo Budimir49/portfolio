@@ -2,12 +2,23 @@
 {
   width: rem(300px);
 
+  @include ipads()
+  {
+    width: 100%;
+  }
+
   &__item
   {
     text-align: right;
     padding: rem(15px) rem(20px);
     line-height: 1.5;
     cursor: pointer;
+
+    @include ipads()
+    {
+      color: #fff;
+      opacity: 0.5;
+    }
   }
 
   .active
@@ -15,5 +26,15 @@
     font-weight: 600;
     color: #4e8839;
     border-right: 3px solid #4e8839;
+
+    @include ipads()
+    {
+      color: #fff;
+      opacity: 1;
+      border-right: 0 solid #4e8839;
+    }
   }
+
+
+
 }

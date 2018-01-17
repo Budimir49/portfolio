@@ -36,7 +36,21 @@
 
     @include ipads()
     {
-      display: none;
+      margin-right: 0;
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: rem(310px);
+      box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+
+    &_active
+    {
+      transform: translateX(0%);
     }
   }
 
@@ -62,14 +76,11 @@
     position: absolute;
     width: rem(300px);
 
-    //right: rem(120px);
-    //left: rem(10px);
-    //margin-right: rem(120px);
-    //margin-bottom: rem(70px);
 
-    @include laptops()
+    @include ipads()
     {
-      //margin-right: rem(100px);
+      z-index: 29;
+
     }
 
     &_fixed
@@ -77,5 +88,40 @@
       position: fixed;
       top: 60px
     }
+  }
+
+  &__background
+  {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #6c9c5a;
+    z-index: 28;
+    @include ipads()
+    {
+      visibility: visible;
+    }
+  }
+
+
+  &__btn-mobile
+  {
+    visibility: hidden;
+    width: rem(60px);
+    height: rem(60px);
+    border-radius: rem(80px);
+    background: #6c9c5a;
+    position: absolute;
+    top: 50%;
+    transform: translate(45%,-50%);
+    cursor: pointer;
+    z-index: 27;
+    box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: 2s;
+
   }
 }

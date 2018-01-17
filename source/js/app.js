@@ -149,19 +149,20 @@ var slider = (function () {
 } ());
 
 var menuBlog = (function () {
-    var menuItems = $('.menu__item');
-    var flag = true;
+    let menuItems = $('.menu__item'),
+        buttonMobileMenu = $('.blog__btn-mobile'),
+        flag = true;
 
-    var scrollMenu = function (container) {
+    let scrollMenu = function (container) {
 
         $(document).scroll(function () {
-            var wrapperOffset = container.offset().top,
+            let wrapperOffset = container.offset().top,
                 articleContainer = $('.article'),
                 menu = $('.blog__menu');
 
-            var offset;
+            let offset;
 
-            for(var i = 0; i < articleContainer.length; i++) {
+            for(let i = 0; i < articleContainer.length; i++) {
                 offset = articleContainer.eq(i).offset();
 
                 if(window.scrollY >= offset.top-300) {
@@ -171,18 +172,31 @@ var menuBlog = (function () {
                     break;
                 }
             }
-            if(window.scrollY > wrapperOffset) {
+
+            if((window.scrollY > wrapperOffset) && (window.innerWidth > 768)) {
                 menu.addClass('blog__menu_fixed');
             } else {
                 menu.removeClass('blog__menu_fixed');
             }
+
+
+            if((window.scrollY > wrapperOffset-300) && (window.innerWidth < 768)) {
+                buttonMobileMenu.css({'opacity': '1', 'visibility' : 'visible'});
+
+            } else {
+
+                buttonMobileMenu.css({'opacity': '0', 'visibility' : 'hidden'});
+            }
+
+
         });
 
     };
 
     menuItems.on('click',function () {
-        var scrollBlogDeffered = $.Deferred();
-        var offset = $(this).attr('data-article-offset');
+        let scrollBlogDeffered = $.Deferred(),
+            offset = $(this).attr('data-article-offset'),
+            aside = $('.blog__aside');
 
 
         if (flag) {
@@ -192,6 +206,8 @@ var menuBlog = (function () {
             },500, function () {
                 scrollBlogDeffered.resolve()
             });
+
+            aside.removeClass('blog__aside_active');
         }
         scrollBlogDeffered.done(function(){
             flag = true;
@@ -385,7 +401,6 @@ $(document).ready(function () {
     });
 
     $('.about-say__btn-arrow').on('click', function (e) {
-
         e.preventDefault();
         let container = $('.works'),
             offset = container.offset().top;
@@ -393,8 +408,13 @@ $(document).ready(function () {
         $('body,html').animate({
             scrollTop: offset
         },500);
+    });
 
-    })
+
+    $('.blog__btn-mobile').on('click', function (e) {
+        let container = $('.blog__aside');
+        container.toggleClass('blog__aside_active');
+    });
 
 });
 

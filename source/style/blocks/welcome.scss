@@ -16,6 +16,7 @@
     bottom: 5%;
     color: #fff;
     white-space: nowrap;
+    z-index: 20;
 
     @include iphones()
     {
@@ -35,6 +36,19 @@
     position: absolute;
     right: 5%;
     top: 2%;
-    z-index: 10;
+    z-index: 20;
+  }
+
+  &:before
+  {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
   }
 }
