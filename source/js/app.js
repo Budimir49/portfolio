@@ -374,7 +374,7 @@ $(document).ready(function () {
         e.preventDefault();
         let intro = $('.flipper__container'),
             btnAuth = $('.welcome__btn-auth');
-        intro.css('transform', 'rotateY(180deg)');
+        intro.addClass('flipper__container_rotate');
         btnAuth.fadeOut();
     });
 
@@ -383,7 +383,7 @@ $(document).ready(function () {
         e.preventDefault();
         let intro = $('.flipper__container'),
             btnAuth = $('.welcome__btn-auth');
-        intro.css('transform', 'rotateY(0deg)');
+        intro.removeClass('flipper__container_rotate');
         btnAuth.fadeIn();
     });
 
@@ -415,6 +415,33 @@ $(document).ready(function () {
         let container = $('.blog__aside');
         container.toggleClass('blog__aside_active');
     });
+
+    $('.btn-upload__input').on('change', function() {
+
+        let splitFakePath = this.value.split('\\'),
+            container = $('.btn-upload__text');
+
+        container.text('Загрузить картинку (' + splitFakePath[splitFakePath.length - 1] + ')');
+    });
+
+
+    $('.tabs__link').on('click', function (e) {
+        e.preventDefault();
+
+        let $that = $(e.target),
+            itemMenu = $that.closest('.tabs__item'),
+            indexItemMenu = itemMenu.index(),
+            itemContent = $('.tabs__content').eq(indexItemMenu),
+            parentItemsMenu = itemMenu.closest('.tabs__title-list'),
+            currentItemMenu = parentItemsMenu.find('.tabs__item_active'),
+            parentItemsContent = $('.tabs__content-list'),
+            currentItemContent = parentItemsContent.find('.tabs__content_active');
+
+        currentItemMenu.removeClass('tabs__item_active');
+        currentItemContent.removeClass('tabs__content_active');
+        itemMenu.addClass('tabs__item_active');
+        itemContent.addClass('tabs__content_active');
+    })
 
 });
 

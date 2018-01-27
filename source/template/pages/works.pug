@@ -20,10 +20,10 @@ block content
                     .about-work__wrapper
                         .subtitle.about-work__title Сайт школы онлайн образования
                         .about-work__tech HTML, CSS, JAVASCRIPT
-                        a(href="").bnt-link.about-work__url
-                            svg.bnt-link__icon
+                        a(href="").btn-link.about-work__url
+                            svg.btn-link__icon
                                 use(xlink:href="/img/icons/sprite.svg#chain")
-                            span.bnt-link__text Посмотреть сайт
+                            span.btn-link__text Посмотреть сайт
                 .works__slide-show.slide-show
                     ul.slide-show__list
                         li.slide-show__item.active
@@ -93,9 +93,15 @@ block content
             .about-say__feedback.feedback
                 .feedback__title.subtitle Связаться со мной
                 form.feedback__form
-                    input(placeholder="Имя").feedback__input.form__input
-                    input(placeholder="E-mail" type="email").feedback__input.form__input
-                    textarea(rows="6" placeholder="Ваше сообщение").feedback__input.form__input
+                    .hint
+                        input(placeholder="Имя").feedback__input.form__input
+                        .hint__text Ошибка ввода
+                    .hint
+                        input(placeholder="E-mail" type="email").feedback__input.form__input
+                        .hint__text Ошибка ввода
+                    .hint
+                        textarea(rows="6" placeholder="Ваше сообщение").feedback__input.form__input
+                        .hint__text Ошибка ввода
                 ul.btns
                     li.btns__item
                         a(href="works.html").btns__link Отправить

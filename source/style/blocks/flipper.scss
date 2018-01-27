@@ -14,5 +14,12 @@
     transition: 1s;
     transform: rotateY(0deg);
     transform-style: preserve-3d;
+
+    &_rotate
+    {
+      transform: rotateY(180deg);
+    }
+
+
   }
 }

@@ -4,7 +4,9 @@ block content
 
     +water
     section.welcome
-        a(href="auth.html").btn-transparent.welcome__btn-auth Авторизоваться
+        .welcome__panel-btn
+            a(href="").btn-transparent Петя
+            a(href="").btn-transparent.welcome__btn-auth Авторизоваться
         .flipper
             .flipper__container
                 .intro
@@ -30,12 +32,19 @@ block content
 
                 .intro.intro_rotate
                     .intro__title.subtitle.subtitle_color_white Авторизуйтесь
-
                     form.form.intro__form
-                        .form__input-pic.form__input-pic_login
+                        .form__input-pic.hint
+                            .form__input-icon
+                                svg.form__icon
+                                    use(xlink:href="/img/icons/sprite.svg#login")
                             input(placeholder="Логин").form__input
-                        .form__input-pic.form__input-pic_password
+                            .hint__textgulp Ошибка ввода логина
+                        .form__input-pic.hint
+                            .form__input-icon
+                                svg.form__icon
+                                    use(xlink:href="/img/icons/sprite.svg#password")
                             input(placeholder="Пароль" type="password").form__input
+                            .hint__text Ошибка ввода
                         label.form__label
                             input(type="checkbox").form__check
                             span.form__check-fake
@@ -55,5 +64,12 @@ block content
                             a(href="").btns__link.intro__on-main На главную
                         li.btns__item.btns__item_half
                             a(href="#").btns__link Войти
+
+        .modal
+            .modal__window
+                .modal__text Сообщение отправлено
+                .modal__btn
+                    a(href="").btn-link Закрыть
+
 
         .welcome__text © Нусралиев Мусрала | создано с любовью в LoftSchool | 2018

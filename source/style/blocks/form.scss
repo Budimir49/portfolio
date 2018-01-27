@@ -102,42 +102,43 @@
     {
       padding-left: rem(60px);
     }
-
-    &:after
-    {
-      position: absolute;
-      top: 0;
-      content: '';
-      display: block;
-      width: rem(48px);
-      height: rem(48px);
-      background-color: #f0efe9;
-      border-top-left-radius: rem(25px);
-      border-bottom-left-radius: rem(25px);
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    &_login
-    {
-
-      &:after
-      {
-        background-image: url('/img/icons/login.png');
-      }
-    }
-
-    &_password
-    {
-
-      &:after
-      {
-        background-image: url('/img/icons/password.png');
-      }
-    }
-
   }
 
+  &__icon
+  {
+    width: rem(16px);
+    height: rem(16px);
+    margin-left: rem(4px);
+    fill: #c4cbcd;
+    transition: 1s;
+
+    &_color_red
+    {
+      fill: #e44845;
+    }
+
+    &_color_green
+    {
+      fill: #6c9c5a;
+    }
+  }
+
+  &__input-icon
+  {
+    position: absolute;
+    top: 0;
+    display: flex;
+    width: rem(48px);
+    height: rem(48px);
+    background-color: #f0efe9;
+    border-top-left-radius: rem(25px);
+    border-bottom-left-radius: rem(25px);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__label
   {

@@ -1,0 +1,51 @@
+.hint
+{
+  position: relative;
+
+
+  &__text{
+    position: absolute;
+    background: #e44845;
+    z-index: 30;
+    left: 105%;
+    top: 0;
+    width: auto;
+    white-space: nowrap;
+    @include roboto(medium);
+    padding: rem(15px) rem(20px);
+    font-size: rem(16px);
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+
+    @include ipads()
+    {
+      top: 100%;
+      left: 15%;
+      font-size: rem(13px);
+    }
+
+    &:before
+    {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: #e44845;
+      z-index: 20;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      left: -8px;
+
+      @include ipads()
+      {
+        top: -8px;
+        transform: translateX(-50%) rotate(45deg);
+        left: rem(20px);
+      }
+
+    }
+  }
+
+}

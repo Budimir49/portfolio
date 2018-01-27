@@ -1,0 +1,98 @@
+extends ../main.layout.pug
+
+block content
+    section.section.admin
+        header.admin__header
+            .container.admin__container
+                .admin__logo Панель администрирования
+                a.admin__link(href="") Вернутся на сайт
+        .admin__tabs.tabs
+            .tabs__title-list
+                .container.tabs__container-menu
+                    .tabs__item.tabs__item_active
+                        a(href="").tabs__link Мои работы
+                    .tabs__item
+                        a(href="").tabs__link Обо мне
+                    .tabs__item
+                        a(href="").tabs__link Блог
+            .tabs__content-list
+                .container.tabs__container-content
+                    .tabs__content.tabs__content_active
+                        h1.admin__title Страница "Мои работы"
+                        h2.admin__title2 Добавить работу
+                        form.admin__works-container
+                            .hint
+                                input(type="text" placeholder="Название проекта").admin__text-input
+                                .hint__text Ошибка
+                            input(type="text" placeholder="Технологии").admin__text-input
+
+                            label.btn-upload.hint
+                                input(type="file").btn-upload__input
+                                .btn-upload__fake
+                                    svg.btn-upload__icon
+                                        use(xlink:href="/img/icons/sprite.svg#upload")
+                                    span.btn-upload__text Загрузить картинку
+                                .hint__text Ошибка
+
+                        a(href='').btn-rectangle Добавить
+                    .tabs__content
+                        h1.admin__title Страница "Обо мне"
+                        form
+                            .admin__tech-container
+                                .admin__tech-list
+                                    h2.admin__title2 Frontend
+                                    .admin__tech-row
+                                        .admin__tech-col-1
+                                            p.admin__text HTML
+                                        .admin__tech-col-2
+                                            input(type="text" value="50").admin__tech-input
+                                        .admin__tech-col-3
+                                            p.admin__text %
+                                    .admin__tech-row
+                                            .admin__tech-col-1
+                                                p.admin__text CSS
+                                            .admin__tech-col-2
+                                                input(type="text" value="10").admin__tech-input
+                                            .admin__tech-col-3
+                                                p.admin__text %
+                                .admin__tech-list
+                                    h2.admin__title2 Backend
+                                    .admin__tech-row
+                                        .admin__tech-col-1
+                                            p.admin__text HTML
+                                        .admin__tech-col-2
+                                            input(type="text" value="10").admin__tech-input
+                                        .admin__tech-col-3
+                                            p.admin__text %
+                                    .admin__tech-row
+                                        .admin__tech-col-1
+                                            p.admin__text CSS
+                                        .admin__tech-col-2
+                                            input(type="text" value="10").admin__tech-input
+                                        .admin__tech-col-3
+                                            p.admin__text %
+                                .admin__tech-list
+                                    h2.admin__title2 Workflow
+                                    .admin__tech-row
+                                        .admin__tech-col-1
+                                            p.admin__text HTML
+                                        .admin__tech-col-2
+                                            input(type="text" value="10").admin__tech-input
+                                        .admin__tech-col-3
+                                            p.admin__text %
+                                    .admin__tech-row
+                                        .admin__tech-col-1
+                                            p.admin__text CSS
+                                        .admin__tech-col-2.hint
+                                            input(type="text" value="10").admin__tech-input
+                                            .hint__text dsfdsfdf
+                                        .admin__tech-col-3
+                                            p.admin__text %
+                        a(href='').btn-rectangle Сохранить
+                    .tabs__content
+                        h1.admin__title Страница "Блог"
+                        h2.admin__title2 Добавить запись
+                        form.admin__blog-container
+                            input(type="text" placeholder="Название").admin__text-input
+                            textarea(rows="8" placeholder="Содержание").admin__textarea
+                        a(href='').btn-rectangle Добавить

@@ -5,13 +5,12 @@
   align-items: center;
   background-color: rgba(#e7e8e4, .7);
   width: rem(380px);
-  overflow: hidden;
   border-radius: 5px;
 
   &__title
   {
     margin-top: rem(30px);
-    margin-bottom: rem(10px);
+    margin-bottom: rem(40px);
   }
 
   &__form
@@ -24,7 +23,7 @@
 
   &__input
   {
-    margin-top: rem(20px);
+
 
 
   }

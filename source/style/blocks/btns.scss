@@ -5,6 +5,9 @@
   margin: 0;
   display: table;
   justify-content: space-around;
+  border-bottom-right-radius: rem(5px);
+  border-bottom-left-radius: rem(5px);
+  overflow: hidden;
 
   &__item
   {

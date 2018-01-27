@@ -1,0 +1,31 @@
+.btn-upload
+{
+
+
+  &__input
+  {
+    display: none;
+  }
+
+  &__fake
+  {
+    display: flex;
+    align-items: center;
+  }
+
+
+
+  &__icon
+  {
+    fill: #6c9c5a;
+    width: rem(48px);
+    height: rem(48px);
+  }
+
+  &__text
+  {
+    color: #6c9c5a;
+    margin-left: rem(5px);
+    padding-bottom: rem(5px);
+  }
+}

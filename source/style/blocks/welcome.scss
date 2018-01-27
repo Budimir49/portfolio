@@ -30,13 +30,17 @@
     }
   }
 
-
-  &__btn-auth
+  &__panel-btn
   {
     position: absolute;
     right: 5%;
-    top: 2%;
+    top: 5%;
     z-index: 20;
+  }
+
+  &__btn-auth
+  {
+
   }
 
   &:before
